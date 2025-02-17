@@ -21,8 +21,9 @@ export function Sidebar({
       { id: "authentication", title: "Authentication" },
     ],
     endpoints: [
-      { id: "posmonitoring", title: "POS Monitoring" },
+      { id: "logs", title: "Logs" },
       { id: "atmmonitoring", title: "ATM Monitoring" },
+      { id: "posmonitoring", title: "POS Monitoring" },
       // { id: 'categories', title: 'Categories' }
     ],
   };
