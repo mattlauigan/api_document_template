@@ -60,7 +60,7 @@ function App() {
           <div className="space-y-12">
             {documentation.endpoints.map((endpoint, index) => (
               <section id={endpoint.id}>
-                <h2 className="text-2xl font-semibold text-gray-800 mb-6">
+                <h2 className="text-2xl font-semibold text-indigo-700 mb-6">
                   {endpoint.title}
                   <a
                     href="#authentication"
