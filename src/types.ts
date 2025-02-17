@@ -1,15 +1,6 @@
-export interface Endpoint {
-  method: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
-  path: string;
-  description: string;
-  parameters?: Parameter[];
-  responses: Response[];
-  authentication?: boolean;
-}
-
 export interface Parameter {
   name: string;
-  type: string;
+  type: "boolean" | "string" | "number";
   required: boolean;
   description: string;
 }
@@ -17,12 +8,32 @@ export interface Parameter {
 export interface Response {
   status: number;
   description: string;
-  example: any;
+  example: unknown;
 }
 
-export interface Section {
+export interface Request {
+  method: "GET" | "POST" | "PUT" | "DELETE" | "PATCH";
+  path: string;
+  description: string;
+  parameters?: Parameter[];
+  responses: Response[];
+  authentication?: boolean;
+}
+
+export interface Identifier {
   id: string;
   title: string;
+}
+
+export interface Endpoint {
+  requests: Request[];
+}
+
+export interface Section extends Identifier {
   content: string;
   subsections?: Section[];
+}
+
+export interface SubSectionType {
+  [key: string]: Identifier[];
 }
